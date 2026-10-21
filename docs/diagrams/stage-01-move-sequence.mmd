@@ -1,0 +1,17 @@
+sequenceDiagram
+    actor Human
+    participant UI as Browser UI
+    participant Engine as Game Engine
+    participant Policy as Conventional Policy
+    Human->>UI: Select empty cell
+    UI->>Engine: makeMove(game, X, position)
+    Engine-->>UI: Updated state or validation error
+    alt Game still in progress
+      UI->>Policy: chooseMove(board)
+      Policy-->>UI: Legal O position
+      UI->>Engine: makeMove(game, O, position)
+      Engine-->>UI: Updated state
+    else Game complete
+      UI-->>Human: Show terminal result
+    end
+    UI-->>Human: Render current board and status

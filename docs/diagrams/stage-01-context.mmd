@@ -1,0 +1,6 @@
+flowchart LR
+    Human[Human Player / Browser] -->|Selects a cell| App[Local Tic-Tac-Toe App]
+    App -->|Validates move and state| Engine[Pure Game Engine]
+    Engine -->|Updated game state| App
+    App -->|Requests conventional move| Baseline[Rule-Based Tactical Opponent]
+    Baseline -->|Returns legal position| App

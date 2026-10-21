@@ -1,0 +1,15 @@
+{
+  "name": "tic-tac-toe-system-design",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "An academic system design project: human-versus-RL Tic-Tac-Toe, evolved from a laptop toward million-user capacity.",
+  "workspaces": ["apps/web", "packages/game-engine"],
+  "scripts": {
+    "test": "node --test packages/game-engine/test/*.test.js",
+    "test:watch": "node --test --watch packages/game-engine/test/*.test.js",
+    "dev": "npm run dev --workspace @ttt/web",
+    "build": "npm run build --workspace @ttt/web"
+  },
+  "engines": { "node": ">=20" }
+}
